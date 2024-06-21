@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasta-code-Editer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+ :root
+ {
+    --background-color1: #717171;
+    --background-color2: #3f3f3f;
+    --color1:black;
+    --color2:white;
+    --coddingColor:white;
+
+    
+ }   
+ .dark
+ {
+    --background-color1: #717171;
+    --background-color2: #3f3f3f;
+    --color1:black;
+    --color2:white;
+    --coddingColor:white;
+
+    
+ }   
+ .light
+ {
+    --background-color1: #e4e5f1;
+    --background-color2: #9394a5;
+    --color1:#484b6a;
+    --color2:#fafafa;
+    --coddingColor:black;
+ }
+   
+ *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body
+{
+    background-color: var(--background-color1);
+}
+.contener
+{
+    
+    height: 100%;
+    width: 100%;
+}
+#heder
+{
+    height: 25px;
+    width: 100%;
+    position: fixed;
+    background-color: var(--background-color1);
+    z-index:5;
+}
+#codding
+{
+   padding-left: 15px;
+   padding-top: 10px;
+   height: 100%; 
+   width: 100%;
+   font-size: 1.1rem;
+   background-color: var(--background-color2);
+   color: var(--coddingColor);
+   margin-top: 1.6rem;
+   border: none;
+   text-align: left;
+}
+#codding1
+{
+   padding-left: 15px;
+   padding-top: 10px;
+   height: 100%; 
+   width: 100%;
+   font-size: 1.1rem;
+   background-color: var(--background-color2);
+   color: var(--coddingColor);
+   margin-top: 1.6rem;
+   border: none;
+}
+#cont
+{
+    height: 100vmax;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    margin-top: 1.7rem;
+}
+#number
+{
+    height: 100%;
+    width: 30px;
+    margin-top: 25px;
+    justify-content: center;
+    background-color: var(--background-color1);
+    font-size: 1.1rem;
+    text-align: center;
+    z-index: 6;
+
+}
+#number1
+{
+    height: 100%;
+    width: 30px;
+    margin-top: 25px;
+    z-index: 6;
+    justify-content: center;
+    background-color: var(--background-color1);
+    font-size: 1.1rem;
+    text-align: center;
+}
+.hederpart
+{
+
+ display: flex;
+ gap: 10px;
+ z-index: 3;
+ border: 1px solid var(--color1);
+ height: 1.8rem;
+ font-size: 1.5rem;
+
+}
+
+
+#output-screen
+{
+    position: absolute;
+    z-index: 10;
+    margin-top: 3.5rem;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    margin-left: 10%;
+    margin-right:-10%;
+    border: 5px solid #717171;
+    display: none;
+}
+#lets
+.but
+{
+    background-color: transparent;
+    height: 20px;
+    width: 20px;
+}
+
+
+#butt
+{
+    margin-left: 10px;
+    background-color: transparent;
+    color: var(--color1);
+    border: none;
+    cursor: pointer;
+}
+#butt:hover
+{
+   color: hsl(0, 0%, 20%);
+
+}
+#butt:active
+{
+    color: hsl(0, 0%, 40%);
+
+}
+#back
+{
+    display: none;
+}
+#file-name
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color1);
+    color: var(--color1);
+    height: 1.6rem;
+    border: 1px solid var(--color1);
+    z-index:5;
+
+
+}
+#css
+{
+    margin-top: 10px;
+    height: 100%; 
+   width: 100%;
+   color: var(--color1);
+}
+#html
+{
+    margin-top: 10px;
+
+    height: 100%; 
+   width: 100%;
+   color: var(--color1);
+}
+i
+{
+    margin: 2px;
+}
+.them
+{
+    position: fixed;
+    right: 0%;
+    overflow: hidden;
+}
+#tdark
+{
+   margin-right: 5%;
+}
+#tlight
+{
+   margin-right: 15%;  
+}
+
+@media only screen and (max-width:600px){
+    #cont{
+        flex-direction: column;
+    }
+    #number,#number1
+    {
+        display: none;
+    }
+    #css{
+        position: fixed;
+        top:52%;
+    }
+    #output-screen
+   {
+    height: 40%;
+
+   }
+   #new{
+    display: none;
+   }
+   .them
+{
+    position: fixed;
+    right: 0%;
+    overflow: hidden;
+}
+#tdark
+{
+   margin-right: 5%;
+}
+#tlight
+{
+   margin-right: 20%;  
+}
+}
+    </style>
+</head>
+<body >
+    <nav>
+    <div class="contener">
+        <div id="heder"> 
+            <div class="hederpart">
+                <div class="but" id ="new"><button id="butt" onclick="window.location.reload(true)"><i class="fa-solid fa-plus"></i> new </button> </div>
+                <div class="but" id ="open"> <button id="butt"><i class="fa-regular fa-folder-open"></i> open </button> </div>
+                <div class="but" id ="help"><a href="help.html"><button id="butt"><i class="fa-solid fa-info"></i> help </button></a> </div>
+                <div class="but" id ="run"><button id="butt"> <i class="fa-solid fa-play"></i> run </button> </div>
+                <div class="but" class="but"id ="back"><button id="butt"><i class="fa-solid fa-code"></i> code </button> </div>
+                <div class="them" id ="tlight"><button id="butt" onclick="light()">  <i class="fa-solid fa-sun"> </i> light </button> </div>
+                <div class="them" id ="tdark"><button id="butt" onclick="dark()"> <i class="fa-solid fa-moon"></i> dark </button> </div>
+            </div>
+            <div id="file-name">
+             <div id="html"><i class="fa-brands fa-html5"></i> index.html </div>
+             <div  id="css"><i class="fa-brands fa-css3-alt"></i>style.css</div>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <main>
+    <div>
+        <div id="cont">
+        <div id="number"></div>
+        <textarea  id="codding" spellcheck="false"  onkeyup ="runn()"><h1 id="start">start code.....</h1>
+        </textarea> 
+        
+        <div id="number1"></div>
+        <textarea  id="codding1" spellcheck="false"  onkeyup ="runn()">#start { color:red; }
+         </textarea> 
+        </div>
+        <i class="fa-solid fa-play"></i>
+        <div id="output">
+            <iframe id="output-screen"> </iframe>
+        
+        </div>
+    </div>
+</main>
+</body>
+<script >
+ const change = document.getElementById("number");
+ const change1 = document.getElementById("number1");
+
+
+
+const output =document.getElementById("output");
+const newbt  =document.getElementById("new");
+const run = document.getElementById("run");
+const back = document.getElementById("back");
+
+const outputscreen = document.getElementById("output-screen");
+runn();
+run.addEventListener("click",(runcode)=>
+{
+
+    {
+        outputscreen.style.display="block";
+        back.style.display="block";
+    }
+});
+back.addEventListener("click",(runcode)=>
+{
+
+    {
+        back.style.display="none";
+        outputscreen.style.display="none";
+    }
+});
+
+
+function runn()
+{
+    
+   let htmlcode =document.querySelector("#codding").value;
+
+    let csscode =document.getElementById("codding1").value;
+    let op=document.getElementById("output-screen");
+    
+    op.contentDocument.body.innerHTML=htmlcode +"<style>"+ csscode +"</style>";
+}
+function dark()
+{
+ document.body.classList.add('dark');  
+ document.body.classList.remove('light');
+
+}
+function light()
+{
+document.body.classList.add('light');   
+document.body.classList.remove('dark'); 
+
+}
+</script>
+</html>
